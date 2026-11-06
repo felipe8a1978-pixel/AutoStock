@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoStock | Inventario Automotriz</title>
+
+    <meta name="description" content="Sistema de inventario y administración de refacciones automotrices">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JavaScript -->
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <div>
+                <h2>AutoStock</h2>
+                <span>Gestión Automotriz</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <p class="menu-title">PRINCIPAL</p>
+
+            <a href="#inicio" class="menu-link active">
+                <span>▦</span> Inicio
+            </a>
+
+            <a href="#inventario" class="menu-link">
+                <span>▤</span> Inventario
+            </a>
+
+            <a href="#productos" class="menu-link">
+                <span>⚙</span> Productos
+            </a>
+
+            <a href="#categorias" class="menu-link">
+                <span>▣</span> Categorías
+            </a>
+
+            <p class="menu-title">OPERACIONES</p>
+
+            <a href="#ventas" class="menu-link">
+                <span>▧</span> Ventas
+            </a>
+
+            <a href="#movimientos" class="menu-link">
+                <span>⇄</span> Movimientos
+            </a>
+
+            <a href="#reportes" class="menu-link">
+                <span>▥</span> Reportes
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <strong>AutoStock v1.0</strong>
+            <span>Sistema de administración</span>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+        <header class="topbar">
+
+            <div>
+                <h1>Panel de control</h1>
+                <p>Bienvenido al sistema AutoStock</p>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">AD</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Control de inventario</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- INICIO -->
+        <section id="inicio" class="dashboard">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Resumen general</h2>
+                    <p>Estado actual de tu negocio</p>
+                </div>
+
+                <button class="btn-primary" id="btnActualizar">
+                    ↻ Actualizar
+                </button>
+            </div>
+
+
+            <!-- TARJETAS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Productos registrados</span>
+                    <h2 id="totalProductos">0</h2>
+                    <p>Catálogo de productos</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Existencias totales</span>
+                    <h2 id="totalStock">0</h2>
+                    <p>Unidades en inventario</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Stock bajo</span>
+                    <h2 id="stockBajo">0</h2>
+                    <p>Productos por revisar</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>Valor del inventario</span>
+                    <h2 id="valorInventario">$0.00</h2>
+                    <p>Valor estimado en productos</p>
+                </div>
+
+            </div>
+
+
+            <!-- INVENTARIO -->
+            <section id="inventario" class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Inventario de refacciones</h2>
+                        <p>Consulta y administra tus productos</p>
+                    </div>
+
+                    <button class="btn-primary" id="btnNuevoProducto">
+                        + Nuevo producto
+                    </button>
+                </div>
+
+
+                <!-- BUSCADOR -->
+                <div class="search-container">
+
+                    <input
+                        type="text"
+                        id="buscarProducto"
+                        placeholder="Buscar por código, producto, marca..."
+                    >
+
+                    <select id="filtroCategoria">
+                        <option value="">Todas las categorías</option>
+                    </select>
+
+                </div>
+
+
+                <!-- TABLA -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Marca</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaProductos">
+
+                            <tr>
+                                <td colspan="7">
+                                    Cargando inventario...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- OTROS MÓDULOS -->
+            <section id="productos" class="content-card">
+                <h2>Administración de productos</h2>
+                <p>Registro, edición y eliminación de refacciones.</p>
+            </section>
+
+            <section id="categorias" class="content-card">
+                <h2>Categorías</h2>
+                <p>Organización de las refacciones automotrices.</p>
+            </section>
+
+            <section id="ventas" class="content-card">
+                <h2>Ventas</h2>
+                <p>Administración de operaciones comerciales.</p>
+            </section>
+
+            <section id="movimientos" class="content-card">
+                <h2>Movimientos de inventario</h2>
+                <p>Control de entradas y salidas de productos.</p>
+            </section>
+
+            <section id="reportes" class="content-card">
+                <h2>Reportes</h2>
+                <p>Información y estadísticas del inventario.</p>
+            </section>
+
+        </section>
+
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="footer">
+            AutoStock © 2026 | Sistema de Inventario Automotriz
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>
